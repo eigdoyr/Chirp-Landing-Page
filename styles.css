@@ -1,0 +1,235 @@
+/* Light-blue Light scheme (Default) */
+/* Can be forced with data-theme="light" */
+[data-theme="light"],
+:root:not([data-theme="dark"]) {
+  --primary: #039be5;
+  --primary-hover: #0288d1;
+  --primary-focus: rgba(3, 155, 229, 0.125);
+  --primary-inverse: #fff;
+}
+
+/* Light-blue Dark scheme (Auto) */
+/* Automatically enabled if user has Dark mode enabled */
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --primary: #039be5;
+    --primary-hover: #03a9f4;
+    --primary-focus: rgba(3, 155, 229, 0.25);
+    --primary-inverse: #fff;
+  }
+}
+
+/* Light-blue Dark scheme (Forced) */
+/* Enabled if forced with data-theme="dark" */
+[data-theme="dark"] {
+  --primary: #039be5;
+  --primary-hover: #03a9f4;
+  --primary-focus: rgba(3, 155, 229, 0.25);
+  --primary-inverse: #fff;
+}
+
+/* Light-blue (Common styles) */
+:root {
+  --form-element-active-border-color: var(--primary);
+  --form-element-focus-color: var(--primary-focus);
+  --switch-color: var(--primary-inverse);
+  --switch-checked-background-color: var(--primary);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Inter", sans-serif;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.chirp-logo {
+  font-weight: 700;
+  font-style: italic;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero-avatars {
+  display: flex;
+  margin-left: 1.25rem;
+}
+
+.avatar {
+  margin-left: -1.25rem;
+}
+
+section {
+  padding: 5rem 0;
+}
+
+.container {
+  padding: 0 1.5rem;
+}
+
+.accent {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.hero-text {
+  padding: 2rem 0;
+}
+
+.hero-header {
+  font-size: 2.05rem;
+  line-height: 2.5rem;
+}
+
+.hero-btn {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  font-weight: 500;
+}
+
+.lead-text {
+  padding: 1rem 0;
+}
+
+.hero-links {
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  padding-bottom: 2rem;
+}
+
+.about-card-item {
+  border: 0.0625rem solid var(--primary);
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.about-subtitle {
+  font-size: 1rem;
+}
+
+.feedback-card-item {
+  background-color: var(--primary-inverse);
+  margin-bottom: 1.75rem;
+  padding: 1.75rem;
+  border-radius: 0.5rem;
+}
+
+.feedback-card-author,
+.feedback-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-author,
+.feedback-like {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.feedback-context {
+  padding: 1rem 0;
+}
+
+.feedback-card-fname {
+  color: black;
+  font-weight: 600;
+}
+
+.section-plan {
+  text-align: center;
+}
+
+.plan-card {
+  text-align: left;
+  border: 0.0625rem solid var(--primary);
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.plan-card-details {
+  display: flex;
+  gap: 1rem;
+}
+
+.price {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--primary-inverse);
+}
+
+.trial-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.footer-nav-list {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  background-color: rgb(177, 255, 255);
+}
