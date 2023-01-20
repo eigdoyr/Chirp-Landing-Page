@@ -23,17 +23,37 @@
       <header>
         <div class="container">
           <nav class="nav">
-            <div class="nav-container">
-              <ul class="nav-items">
-                <li><a class="chirp-logo" href="#">Chirp.</a></li>
+            <div class="nav-menu-collapse">
+              <div class="logo">
+                <a class="chirp-logo" href="#">Chirp.</a>
+              </div>
+              <img
+                class="hamburger-bar"
+                src="./Assets/Hamburger Menu.svg"
+                alt="menu list"
+              />
+            </div>
+            <div class="nav-menu">
+              <ul class="nav-menu-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">FAQ</a></li>
                 <li>
-                  <img src="./Assets/Hamburger Menu.svg" alt="menu list" />
+                  <a class="hero-btn">
+                    <img
+                      src="./Assets/Twitter.svg"
+                      alt="twitter sign in button"
+                    />
+                    Sign in with Twitter
+                  </a>
                 </li>
               </ul>
             </div>
           </nav>
+
           <div class="main-hero grid">
             <img
+              class="main-hero-img"
               src="./Assets/Hero Image (Desktop View).png"
               alt="chirp stats screenshot"
             />
@@ -121,8 +141,10 @@
       </header>
       <section class="section-about">
         <div class="container">
-          <h2 class="section-title">Features that help you Tweet smarter.</h2>
-          <div class="about-card grid">
+          <h2 class="section-title about-title">
+            Features that help you Tweet smarter.
+          </h2>
+          <div class="about-card">
             <div class="about-card-item">
               <h3 class="about-subtitle">Analytics</h3>
               <p class="lead-text">
@@ -160,7 +182,7 @@
       </section>
       <section class="section-feedback">
         <div class="container">
-          <h4 class="section-title">What our customers say</h4>
+          <h4 class="section-title feedback-title">What our customers say</h4>
           <div class="feedback-cards grid">
             <figure class="feedback-card-item">
               <figcaption class="feedback-card-author">
@@ -258,9 +280,9 @@
       </section>
       <section class="section-plan">
         <div class="container">
-          <h5 class="section-title">One simple price plan</h5>
-          <p class="lead-text">
-            Start growing yoiur Twitter account by analyzing your follower's
+          <h5 class="section-title plan-title">One simple price plan</h5>
+          <p class="lead-text plan-lead">
+            Start growing your Twitter account by analyzing your follower's
             patterns.
           </p>
           <div class="plan-card">

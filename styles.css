@@ -1,5 +1,3 @@
-/* Light-blue Light scheme (Default) */
-/* Can be forced with data-theme="light" */
 [data-theme="light"],
 :root:not([data-theme="dark"]) {
   --primary: #039be5;
@@ -8,8 +6,6 @@
   --primary-inverse: #fff;
 }
 
-/* Light-blue Dark scheme (Auto) */
-/* Automatically enabled if user has Dark mode enabled */
 @media only screen and (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --primary: #039be5;
@@ -19,8 +15,6 @@
   }
 }
 
-/* Light-blue Dark scheme (Forced) */
-/* Enabled if forced with data-theme="dark" */
 [data-theme="dark"] {
   --primary: #039be5;
   --primary-hover: #03a9f4;
@@ -28,7 +22,6 @@
   --primary-inverse: #fff;
 }
 
-/* Light-blue (Common styles) */
 :root {
   --form-element-active-border-color: var(--primary);
   --form-element-focus-color: var(--primary-focus);
@@ -39,6 +32,7 @@
 *,
 *::before,
 *::after {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -72,6 +66,7 @@ body {
 }
 
 a:not([class]) {
+  -webkit-text-decoration-skip: ink;
   text-decoration-skip-ink: auto;
 }
 
@@ -88,17 +83,33 @@ select {
   font: inherit;
 }
 
+section {
+  padding: 3rem 0;
+}
+
 .chirp-logo {
   font-weight: 700;
   font-style: italic;
 }
 
-.nav {
+.nav-menu-collapse {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  padding-bottom: 1rem;
+  width: 100%;
+}
+
+.nav-menu {
+  display: none;
 }
 
 .hero-avatars {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-left: 1.25rem;
 }
@@ -107,16 +118,12 @@ select {
   margin-left: -1.25rem;
 }
 
-section {
-  padding: 5rem 0;
-}
-
 .container {
   padding: 0 1.5rem;
 }
 
 .accent {
-  color: var(--primary);
+  color: var(--primary-hover);
   font-weight: 600;
 }
 
@@ -127,13 +134,22 @@ section {
 .hero-header {
   font-size: 2.05rem;
   line-height: 2.5rem;
+  max-width: 21rem;
 }
 
 .hero-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   gap: 0.75rem;
   font-weight: 500;
+  font-size: 0.85rem;
 }
 
 .lead-text {
@@ -171,18 +187,33 @@ section {
 
 .feedback-card-author,
 .feedback-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .card-author,
 .feedback-like {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 0.5rem;
 }
 
+.section-feedback {
+  background-color: #152c38;
+}
+
+.about-title {
+  max-width: 30rem;
+}
+
 .feedback-context {
   padding: 1rem 0;
+  color: black;
 }
 
 .feedback-card-fname {
@@ -200,11 +231,16 @@ section {
   margin-bottom: 1rem;
   padding: 1.5rem;
   border-radius: 0.5rem;
+  max-width: 28.6875rem;
+  margin: 0 auto;
 }
 
 .plan-card-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 1rem;
+  padding-bottom: 1rem;
 }
 
 .price {
@@ -214,22 +250,109 @@ section {
 }
 
 .trial-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   gap: 0.5rem;
 }
 
 .footer-nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 1rem;
 }
 
 .footer-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 footer {
   background-color: rgb(177, 255, 255);
+}
+
+@media (width>=995px) {
+  .main-hero {
+    gap: 2rem;
+  }
+
+  .hero-btn {
+    background-color: var(--primary);
+    color: var(--primary-inverse);
+  }
+
+  .hamburger-bar {
+    display: none;
+  }
+
+  .nav-menu {
+    display: block;
+    padding-bottom: 4rem;
+    margin-top: -1rem;
+  }
+
+  .main-hero-img {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+    width: 80%;
+    margin-left: 22%;
+  }
+
+  .hero-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hero-btn {
+    width: 13.5rem;
+  }
+
+  .about-card {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1rem 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .about-card-item {
+    margin-bottom: 0;
+  }
+
+  .plan-title {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .plan-lead {
+    padding-bottom: 3rem;
+  }
+
+  .footer-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
 }
